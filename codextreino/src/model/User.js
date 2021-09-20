@@ -8,11 +8,25 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
         match: /^\w+([.-]?\w+)*(@codexjr.com.br)+$/
     },
     password: {
         type: String,
         required: true,
+    },
+    projetos: {
+        type: [String],
+        required: false,
+    },
+    adm: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    cargo: {
+        type: String,
+        required: false,
     },
     is_enable: {
         type: Boolean,
